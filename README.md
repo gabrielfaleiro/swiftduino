@@ -18,9 +18,12 @@ I hope you find this project interesting. Please, do not hesitate in propose imp
     * **eeprom_app/** : Class for securely handling reads and writes to EEPROM memory and abstracting them from the application code
     * **esp8266/** : ESP8266 functionalities
     * **timing/** : Timing functionalities for Arduino to avoid blocking code (delay)
+    * **state_machine/** : work in progress
 * **docs/** : Project documentation
     * **CONTRIBUTING.md**
 
 ## Code examples
 
-* TODO
+* Handy
+    * Code: https://github.com/gabrielfaleiro/handy-moisture-sensor
+    * Hardware: https://hackaday.io/project/194410-handy-moisture-sensor-v1
