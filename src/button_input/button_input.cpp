@@ -10,9 +10,9 @@ ButtonInput::ButtonInput(uint8_t pin, bool push_logic_level){
   _pin = pin;
   pinMode(_pin, INPUT);
 
-  _short_push_millis    =   200;
-  _medium_push_millis   =  3000;
-  _long_push_millis     = 10000;
+  _short_push_millis    = SHORT_PUSH_MILLIS;
+  _medium_push_millis   = MEDIUM_PUSH_MILLIS;
+  _long_push_millis     = LONG_PUSH_MILLIS;
 
   _millis_counter = 0;
   _prev_pin_state = ! push_logic_level;

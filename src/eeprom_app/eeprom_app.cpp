@@ -4,20 +4,13 @@
 
 #include "eeprom_app.h"
 
-// Constructor implementation
-EepromApp::EepromApp(uint16_t mem_size) {
-  _mem_size = mem_size;
-  EEPROM.begin(_mem_size);
+/* /////////////////////////////////////////////////////////////////
+    Application functions
 
-  _setAddresses();
-}
+    These functions are the ones that the main code will use
+    Extend and modify only these functions
 
-EepromApp::EepromApp() {
-  _mem_size = 256;
-  EEPROM.begin(_mem_size);
-
-  _setAddresses();
-}
+*/ /////////////////////////////////////////////////////////////////
 
 uint16_t EepromApp::getMaxHumidity(){
   return _readUint16(_max_humidity_addr);
@@ -36,6 +29,28 @@ void EepromApp::_setAddresses() {
   _max_humidity_addr = 0;
   _min_humidity_addr = 2;
 }
+
+/* /////////////////////////////////////////////////////////////////
+    Constructors
+*/ /////////////////////////////////////////////////////////////////
+
+EepromApp::EepromApp(uint16_t mem_size) {
+  _mem_size = mem_size;
+  EEPROM.begin(_mem_size);
+
+  _setAddresses();
+}
+
+EepromApp::EepromApp() {
+  _mem_size = 256;
+  EEPROM.begin(_mem_size);
+
+  _setAddresses();
+}
+
+/* /////////////////////////////////////////////////////////////////
+    Internal functions
+*/ /////////////////////////////////////////////////////////////////
 
 void EepromApp::_writeVal(uint16_t addr, uint8_t val){
   if (_readUint8(addr) != val){

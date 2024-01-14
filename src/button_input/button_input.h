@@ -3,7 +3,10 @@
 #define BUTTON_INPUT_H_
 
 #include <Arduino.h>
-#include <EEPROM.h>
+
+#define SHORT_PUSH_MILLIS  200
+#define MEDIUM_PUSH_MILLIS 3000
+#define LONG_PUSH_MILLIS   10000
 
 class ButtonInput{
 public:

@@ -15,9 +15,6 @@ Decod7SegDisp::Decod7SegDisp(int pin_a, int pin_b, int pin_c, int pin_d) {
 }
 
 void Decod7SegDisp::displayDigit(uint val) {
-  if(val > 9){
-    val = 0xe;
-  }
   digitalWrite(_pin_a, val & 0b0001);
   digitalWrite(_pin_b, val & 0b0010);
   digitalWrite(_pin_c, val & 0b0100);
